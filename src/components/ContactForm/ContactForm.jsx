@@ -41,7 +41,7 @@ export const ContactForm = () => {
   return (
     <Form onSubmit={handleSubmit}>
       <Label>
-        Name:
+        Name
         <Input
           type="text"
           name="name"
@@ -53,7 +53,7 @@ export const ContactForm = () => {
         />
       </Label>
       <Label>
-        Number:
+        Number
         <Input
           type="tel"
           name="number"
