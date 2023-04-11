@@ -1,7 +1,7 @@
 import { PropTypes } from 'prop-types';
 import { ListItem, Name, Number, DeleteButton } from './ContactEl.styled';
 import { useDispatch } from 'react-redux';
-import { setDeleteContact } from 'redux/options';
+import { setDeleteContact } from 'redux/phonebook/options';
 
 export const ContactEl = ({ id, name, number }) => {
   const dispatch = useDispatch();

@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { filterContacts } from 'redux/phonebookSlice';
+import { filterContacts } from 'redux/phonebook/phonebookSlice';
 
 import { Input, Label } from './Filter.styled';
 

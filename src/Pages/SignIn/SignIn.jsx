@@ -1,4 +1,9 @@
+import { useDispatch } from 'react-redux';
+import { register } from 'redux/auth/options';
+
 export const SignIn = () => {
+  const dispatch = useDispatch();
+
   const handleSubmit = e => {
     e.preventDefault();
 
@@ -7,10 +12,10 @@ export const SignIn = () => {
     const email = form.elements.email.value;
     const password = form.elements.password.value;
 
-    const NewUser = { name, email, password };
+    const newUser = { name, email, password };
 
-    console.log(NewUser);
-
+    console.log(newUser);
+    dispatch(register(newUser));
     form.reset();
   };
 

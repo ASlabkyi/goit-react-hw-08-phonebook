@@ -1,18 +1,20 @@
 import { NavLink, Outlet } from 'react-router-dom';
 import { NavAuth } from 'components/NavAuth/AuthNav';
 import { NavUser } from 'components/NavUser/NavUser';
+import { useSelector } from 'react-redux';
+import { selectIsLoggedIn } from 'redux/auth/selectors';
 
 export const Layout = () => {
+  const isLoggedIn = useSelector(selectIsLoggedIn);
   return (
     <div>
       <header>
         <nav>
           <div>
             <NavLink to="/">Home Page</NavLink>
-            <NavLink to="/phonebook">Contacts</NavLink>
+            {isLoggedIn && <NavLink to="/phonebook">Contacts</NavLink>}
           </div>
-          <NavAuth />
-          <NavUser />
+          {isLoggedIn ? <NavUser /> : <NavAuth />}
         </nav>
       </header>
       <main>

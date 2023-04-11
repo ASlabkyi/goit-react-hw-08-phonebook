@@ -1,5 +1,5 @@
 import { ContactEl } from '../ContactEl/ContactEl';
-import { fetchAllContacts } from 'redux/options';
+import { fetchAllContacts } from 'redux/phonebook/options';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { List } from './ContactList.styled';

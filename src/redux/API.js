@@ -1,10 +1,12 @@
 import axios from 'axios';
 
-const url = 'https://64305b28c26d69edc890573d.mockapi.io/contacts';
+// const axiosUrl = axios.create({
+//   baseURL: 'https://connections-api.herokuapp.com',
+// });
 
 export const fetchContacts = async () => {
   try {
-    const { data } = await axios.get(url);
+    const { data } = await axios.get('/contacts');
     return data;
   } catch (error) {
     alert(error.message);
@@ -13,7 +15,7 @@ export const fetchContacts = async () => {
 
 export const addContact = async newContact => {
   try {
-    const { data } = await axios.post(url, newContact);
+    const { data } = await axios.post('/contacts', newContact);
     return data;
   } catch (error) {
     alert(error.message);
@@ -22,8 +24,15 @@ export const addContact = async newContact => {
 
 export const deleteContact = async contactId => {
   try {
-    const { data } = await axios.delete(`${url}/${contactId}`);
+    const { data } = await axios.delete(`/contacts/${contactId}`);
     return data;
+  } catch (error) {
+    alert(error.message);
+  }
+};
+
+export const initNewuser = async user => {
+  try {
   } catch (error) {
     alert(error.message);
   }
