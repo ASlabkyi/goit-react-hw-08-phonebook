@@ -9,9 +9,11 @@ export const NavUser = () => {
   const handleLogOut = () => dispatch(logOut());
 
   return (
-    <div>
-      <p>Welcome {name}</p>
-      <button type="button" onClick={handleLogOut}>
+    <div className="d-flex gap-3">
+      <p className="mb-0 d-flex align-items-center gap-1">
+        Welcome <span className="fw-bold">{name}</span>
+      </p>
+      <button className="btn btn-primary" type="button" onClick={handleLogOut}>
         Log out
       </button>
     </div>

@@ -8,11 +8,20 @@ export const Layout = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   return (
     <div>
-      <header>
-        <nav>
-          <div>
-            <NavLink to="/">Home Page</NavLink>
-            {isLoggedIn && <NavLink to="/phonebook">Contacts</NavLink>}
+      <header className="mx-3 pt-2 pb-2">
+        <nav className=" nav nav-pills flex-column flex-sm-row d-flex justify-content-between align-items-center ">
+          <div className="d-flex gap-3">
+            <NavLink className="flex-sm-fill text-sm-center nav-link " to="/">
+              Home Page
+            </NavLink>
+            {isLoggedIn && (
+              <NavLink
+                className="flex-sm-fill text-sm-center nav-link "
+                to="/phonebook"
+              >
+                Contacts
+              </NavLink>
+            )}
           </div>
           {isLoggedIn ? <NavUser /> : <NavAuth />}
         </nav>

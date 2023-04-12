@@ -2,7 +2,6 @@ import { ContactEl } from '../ContactEl/ContactEl';
 import { fetchAllContacts } from 'redux/phonebook/options';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { List } from './ContactList.styled';
 import { ThreeDots } from 'react-loader-spinner';
 
 export const ContactList = () => {
@@ -37,10 +36,14 @@ export const ContactList = () => {
   }
 
   return (
-    <List>
-      {contacts.map(({ id, name, number }) => (
-        <ContactEl key={id} id={id} name={name} number={number}></ContactEl>
-      ))}
-    </List>
+    <div className="p-3 bg-light d-flex justify-content-center">
+      <div className="col-md-6 mt-5">
+        <ul className="list-group">
+          {contacts.map(({ id, name, number }) => (
+            <ContactEl key={id} id={id} name={name} number={number}></ContactEl>
+          ))}
+        </ul>
+      </div>
+    </div>
   );
 };
